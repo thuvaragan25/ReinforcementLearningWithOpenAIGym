@@ -1,6 +1,5 @@
 import gym
 import os
-import time 
 import numpy as np
 import random
 
@@ -12,7 +11,7 @@ lr = 0.1
 discount = 0.6
 epsilon = 0.1
 
-for i in range(1000):
+for i in range(100000):
     observation = env.reset()
     done = False
     while not done:
@@ -34,7 +33,7 @@ for i in range(1000):
             os.system('clear')
 
 env.close()
-with open('qtable1000.npy', 'wb') as f:
+with open('qtable100000.npy', 'wb') as f:
     np.save(f, Q_table)
 
 
